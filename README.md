@@ -393,6 +393,7 @@ $ nvm use 18
 $ yarn
 $ yarn run start
 ```
+- 由于版本过久 依赖的账户合约 是旧的 所以没法直接用，本地做了修改 但不是更新依赖包做法
 - site 模块 为钱包网站前端应用代码
   
 ```node 
@@ -516,3 +517,28 @@ const op = await aa.createSignedUserOp({
 };
 
 ```
+
+### https://github.com/dawnwallet/erc4337-wallet
+
+- 支持secp256 r1,苹果指纹加密 支持该算法
+- accountWallet合约 记录公钥
+
+```solidity
+    /// @dev Validate combination of message, signature, and public key.
+    /// @param message Hash of the signed message
+    /// @param rs signature
+    /// @param Q public key, that the signature should recover to
+    function validateSignature(bytes32 message, uint256[2] memory rs, uint256[2] memory Q) public pure returns (bool)
+
+```
+
+### https://github.com/SoulWallet/soul-wallet-contract
+
+- 支持eip1271 isValidSignture
+- 支持主要用到 eth 地址recover 算法 来去验证
+- 功能模块化
+```solidity
+  (address recoveredAddr, ECDSA.RecoverError error,) = ECDSA.tryRecover(rawHash, rawSignature);
+```
+
+### MPC 多私钥 还是ETH做法 只是私钥不可见 对于验证也是用recover
