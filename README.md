@@ -7,7 +7,17 @@
 
 ## Qng Node
 
-`reference https://github.com/Qitmeer/qng`
+` Reference https://github.com/Qitmeer/qng`
+- Qng testnet deployed addresses
+- Available node
+- RPC: **http://216.230.226.189:1234**
+- ChainID: 8131
+```node 
+const entryPointAddress = '0x0000000071727De22E5E9d8BAf0edAc6f37da032';
+const factoryAddress = '0x12a4F339F74c08F23D8033dF4457eC253DC9AdC0';
+```
+- EntryPoint Contract Reference https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/core/EntryPoint.sol
+- AccountFactory Contract Reference https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/samples/SimpleAccountFactory.sol
 
 ## Deploy Contract
 
