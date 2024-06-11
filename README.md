@@ -5,6 +5,10 @@
 ![avatar](./eip4337.png)
 
 
+- 加密抽象
+- 
+- Gas抽象
+
 ## Qng Node
 
 ` Reference https://github.com/Qitmeer/qng`
@@ -536,7 +540,7 @@ const op = await aa.createSignedUserOp({
 
 - 支持eip1271 isValidSignture
 - 支持主要用到 eth 地址recover 算法 来去验证
-- 功能模块化
+- 功能模块化 EIP - 6900 
 ```solidity
   (address recoveredAddr, ECDSA.RecoverError error,) = ECDSA.tryRecover(rawHash, rawSignature);
 ```
